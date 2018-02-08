@@ -16,9 +16,9 @@ Copy it to the web.config file.
 Log in to QnAMaker.ai and create a new QnA Service.
 On your "My QnA services" overview page (https://qnamaker.ai/Home/MyServices) get the Sample HTTP Request by clicking on Sample Code -> "View Code" beloning to the QnA service in question. find the **{qnaKnowledgebaseId}** and **{qnaSubscriptionKey}** and copy them to your project's web.config file.
 
-    POST /knowledgebases/**{qnaKnowledgebaseId}**/generateAnswer
+    POST /knowledgebases/{qnaKnowledgebaseId}/generateAnswer
     Host: https://westus.api.cognitive.microsoft.com/qnamaker/v2.0
-    Ocp-Apim-Subscription-Key: **{qnaSubscriptionKey}**
+    Ocp-Apim-Subscription-Key: {qnaSubscriptionKey}
     Content-Type: application/json
     {"question":"hi"}
 
@@ -36,4 +36,5 @@ Deploy the bot project as an Azure Web App and note it's endpoint in the followi
     https://[yourname].azurewebsites.net/api/messages
 
 Copy this endpoint to the bot framework configuration page's "Messaging Endpoint" field.
+
 Test your bot in the interactive chat window in the bot framework page.
